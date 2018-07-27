@@ -12,16 +12,45 @@ register_nav_menus(
 array( 'main-menu' => __( 'Main Menu', 'blankslate' ) )
 );
 }
-add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
-function blankslate_load_scripts()
+
+function loadscript()
 {
-wp_enqueue_script( 'jquery' );
+    wp_register_script( 'bootstrap.js', get_template_directory_uri(). '/js/bootstrap.js' );
+    wp_enqueue_script( 'bootstrap.js' );
+
+    wp_register_script( 'styles.js', get_template_directory_uri(). '/js/styles.js' );
+    wp_enqueue_script( 'styles.js' );
+wp_enqueue_script( 'styles.js' );
 }
-add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
-function blankslate_enqueue_comment_reply_script()
-{
-if ( get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
+
+add_action( 'bootstrap.js', 'styles.js' );
+
+function loadstyle() {
+
+    wp_register_style( 'styles.css', get_template_directory_uri(). '/css/styles.css' );
+    wp_enqueue_style( 'styles.css' );
+
+    wp_register_style( 'bootstrap.css', get_template_directory_uri(). '/css/bootstrap.css' );
+    wp_enqueue_style( 'bootstrap.css' );
+
+    wp_register_style( 'bootstrap.min.css', get_template_directory_uri(). '/css/bootstrap.min.css' );
+    wp_enqueue_style( 'bootstrap.min.css' );
+
+    wp_register_style( 'custom.css', get_template_directory_uri(). '/css/custom.css' );
+    wp_enqueue_style( 'custom.css' );
+
+    wp_register_style( 'font-awesome.min.css', get_template_directory_uri(). '/css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-awesome.min.css' );
+
+    wp_register_style( 'select2.min.css', get_template_directory_uri(). '/css/select2.min.css' );
+    wp_enqueue_style( 'select2.min.css' );
+
+    wp_register_style( 'swiper.min.css', get_template_directory_uri(). '/css/swiper.min.css' );
+    wp_enqueue_style( 'swiper.min.css' );
 }
+
+add_action('styles.css', 'bootstrap.css', 'bootstrap.min.css', 'font-awesome.min.css', 'custom.min.css', 'select2.min.css', 'swiper.min.css');
+
 add_filter( 'the_title', 'blankslate_title' );
 function blankslate_title( $title ) {
 if ( $title == '' ) {
