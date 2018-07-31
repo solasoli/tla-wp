@@ -13,6 +13,42 @@ array( 'main-menu' => __( 'Main Menu', 'blankslate' ) )
 );
 }
 
+if(function_exists('acf_add_options_page') && function_exists('acf_add_options_sub_page') ) {
+    
+    acf_add_options_page();
+    
+    acf_add_options_sub_page('Homepage Editor');
+    acf_add_options_sub_page('Service Editor');
+    acf_add_options_sub_page('Contact Editor');
+
+    // $parent = acf_add_options_page(array(
+    //     'page_title' => 'Site Editor',
+    //     'menu_title' => 'Site Editor',
+    //     'menu_slug' => 'site-editor',
+    //     'capability' => 'edit_posts',
+    //     'parent_slug' => '',
+    //     'position' => false,
+    //     'icon_url' => false,
+    // ));
+
+    // acf_add_options_sub_page(array(
+    //     'page_title' => 'Homepage Editor',
+    //     'menu_title' => 'Homepage Editor',
+    //     'menu_slug' => $parent['menu_slug'],
+    //     'capability' => 'edit_post',
+    //     'parent_slug' => $parent,
+    //     'position' => false,
+    //     'icon_url' => false,
+    //     'redirect' => false,
+    // ));
+
+    
+
+    
+}
+
+   
+
 function loadscript()
 {
     wp_register_script( 'bootstrap.js', get_template_directory_uri(). '/js/bootstrap.js' );
