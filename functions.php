@@ -15,7 +15,8 @@ array( 'main-menu' => __( 'Main Menu', 'blankslate' ) )
 
 if(function_exists('acf_add_options_page') && function_exists('acf_add_options_sub_page') ) {
     
-    acf_add_options_page();
+    
+    acf_add_options_page('Site Editor');
     
     acf_add_options_sub_page('Homepage Editor');
     acf_add_options_sub_page('Service Editor');
