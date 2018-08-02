@@ -18,7 +18,7 @@ $url = home_url();
     <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="<?php echo get_template_directory(); ?> . /css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_template_directory(); ?> . /css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@ $url = home_url();
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="thongleeNavbar">
                 <ul class="nav navbar-nav hidden-xs hidden-sm">
-                    <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
